@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, ActivityIndicator, Button } from 'react-native';
+import { Text, View, StyleSheet, ActivityIndicator, Button, ImageBackground } from 'react-native';
 import Constants from 'expo-constants';
 import { Card } from 'react-native-paper';
 import * as Font from 'expo-font';
@@ -59,7 +59,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <ImageBackground source={require('./assets/web.jpg')} style={styles.container}>
       <Text style={styles.header}>Bitcoin Price Tracker</Text>
       <Card style={styles.card} elevation={5}>
         {loading ? (
@@ -72,7 +72,7 @@ export default function App() {
       <Text style={styles.countdown}>Next update in: {countdown}s</Text>
       
       <Text style={styles.footer}>Developed by Jetsadakorn Dutphayap</Text>
-    </View>
+    </ImageBackground>
   );
 }
 
@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#F8F9FA',
     padding: 16,
   },
   header: {
@@ -90,7 +89,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontFamily: 'chakapetch',
-    color: '#333',
+    color: '#000',
     marginBottom: 20,
   },
   loadingContainer: {
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
   footer: {
     marginTop: 30,
     fontSize: 16,
-    color: '#666',
+    color: '#000',
     fontFamily: 'chakapetch',
   },
   countdown: {
